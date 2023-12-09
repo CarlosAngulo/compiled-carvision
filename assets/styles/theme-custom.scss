@@ -1,0 +1,91 @@
+@forward '@nebular/theme/styles/theming';
+@use '@nebular/theme/styles/theming' as *;
+@use '@nebular/theme/styles/themes/default';
+@use '@nebular/theme/styles/themes/dark';
+@use 'sass:color';
+
+$primary-color: #8b5cf6;
+$primary-color-dark: darken($primary-color, 10%);
+
+$nb-themes: nb-register-theme((
+    background-basic-color-1: white,
+    font-family-primary: 'Inter',
+    layout-background-color: #f1f5f9,
+    layout-padding: 2rem 2.25rem 1rem,
+    menu-item-icon-color: white,
+    menu-item-icon-width: 2rem,
+    menu-item-icon-margin: 0,
+    sidebar-background-color: $primary-color-dark,
+    border-radius: 0.5rem,
+    // header
+    header-padding: 1.25rem 3rem,
+    // button primary
+    button-filled-primary-background-color: $primary-color,
+    button-filled-primary-border-color: $primary-color,
+    button-filled-primary-hover-background-color: #a47dff,
+    button-filled-primary-hover-border-color: $primary-color,
+    button-filled-primary-focus-background-color: $primary-color-dark,
+    button-filled-large-padding: .5rem 1.25rem,
+    // button secondary
+    button-filled-basic-background-color: #e2e8f0,
+    button-filled-basic-border-color: #e2e8f0,
+    button-filled-basic-text-color: #64748b,
+    button-filled-text-transform: none,
+    button-filled-secondary-hover-background-color: #e8eff9,
+    button-filled-secondary-hover-border-color: #e2e8f0,
+    button-filled-danger-background-color: #d948cd,
+    button-filled-danger-border-color: #d948cd,
+    button-filled-danger-hover-background-color: #f154e4,
+    button-filled-danger-hover-border-color: #f154e4,
+    // User component
+    card-margin-bottom: 0.75rem,
+    card-padding: 0.75rem 1rem,
+    user-name-text-font-weight: 600, 
+    user-name-text-color: #444,
+    user-title-text-color: rgb(148, 163, 184),
+    user-picture-box-border-color: button-filled-primary-background-color,
+    // Tables
+    tree-grid-cell-padding: 0.35rem 0.75rem,
+    tree-grid-cell-border-color: #DDD,
+), 'custom-theme', 'default');
+
+$mobile-card-radius: 24px;
+
+$nb-themes: nb-register-theme(
+  (
+    font-family-primary: 'Montserrat',
+    layout-background-color: transparent,
+    input-rectangle-border-radius: 900px,
+    
+    datepicker-background-color: #f1eef7,
+    datepicker-border-radius: $mobile-card-radius,
+    datepicker-border-width: 2px,
+    datepicker-border-color: #e3daff,
+    calendar-weekday-text-color: #7961c1,
+    calendar-weekday-holiday-text-color: #7961c1,
+    calendar-cell-inactive-text-color: #a99ad7,
+    calendar-cell-selected-background-color: #8869d1,
+    calendar-cell-selected-border-color: #8869d1,
+    
+    button-filled-primary-background-color: $primary-color,
+    button-filled-primary-border-color: $primary-color,
+    button-filled-primary-hover-background-color: #a47dff,
+    button-filled-primary-hover-border-color: $primary-color,
+    button-filled-primary-focus-background-color: $primary-color-dark,
+    button-filled-large-padding: .5rem 1.25rem,
+    button-rectangle-border-radius: $mobile-card-radius,
+    
+    card-border-radius: $mobile-card-radius,
+    card-padding: 2rem 1.25rem,
+    card-background-color: #ede9fe,
+    user-name-text-color: rgb(221 214 254),
+    user-name-text-font-weight: 800,
+    user-initials-text-color: #9655d3,
+    user-initials-text-font-weight: 800,
+    user-title-text-color: #9655d3,
+    user-picture-box-border-color: #cf9efe,
+    user-picture-box-border-width: 2px,
+  ),
+  'user-theme',
+  'default'
+);
